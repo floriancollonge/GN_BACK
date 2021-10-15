@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/fcollonge/0D2F-12D1/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj": {}
+    "/home/fcollonge/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj": {}
   },
   "projects": {
-    "/media/fcollonge/0D2F-12D1/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj": {
+    "/home/fcollonge/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/fcollonge/0D2F-12D1/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj",
+        "projectUniqueName": "/home/fcollonge/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj",
         "projectName": "GN_BACK",
-        "projectPath": "/media/fcollonge/0D2F-12D1/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj",
+        "projectPath": "/home/fcollonge/Workspaces/Bamboo_Nursery/GN_BACK/GN_BACK.csproj",
         "packagesPath": "/home/fcollonge/.nuget/packages/",
-        "outputPath": "/media/fcollonge/0D2F-12D1/Workspaces/Bamboo_Nursery/GN_BACK/obj/",
+        "outputPath": "/home/fcollonge/Workspaces/Bamboo_Nursery/GN_BACK/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/fcollonge/.nuget/NuGet/NuGet.Config"
@@ -35,6 +35,78 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "Mysql.Data": {
+              "target": "Package",
+              "version": "[8.0.26, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Enrichers.Process": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Serilog.Enrichers.Thread": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Sinks.RollingFile": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "SerilogTimings": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +125,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.413/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
         }
       }
     }
