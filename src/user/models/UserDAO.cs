@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace nursery.prospect.models
 {
-    [Table("user")]
+    [Table("users")]
     public class UserDAO
     {
         [Key]
         [Column("id_user")]
-        public int IdUser {get;set;}
+        public string IdUser {get;set;}
         
         [Column("first_name")]
         [Required]

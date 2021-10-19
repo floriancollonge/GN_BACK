@@ -4,16 +4,16 @@ using Microsoft.Extensions.Logging;
 using nursery.context;
 using System.Collections.Generic;
 using nursery.prospect.models;
-using nursery.user;
+using nursery.prospect;
 
 namespace nursery.Controllers.User
 {
     /*
-     * Handle the users 
+     * Handle the prospects 
      */
     [Route("/")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class ProspectController : ControllerBase
     {
 
         /// <summary>Default logger</summary>
@@ -23,7 +23,7 @@ namespace nursery.Controllers.User
         /// <summary>Db context</summary>
         protected readonly MyDbContext _dbContext;
 
-        public UserController(IConfiguration configuration, ILogger<UserController> logger, MyDbContext dbContext) : base()
+        public ProspectController(IConfiguration configuration, ILogger<UserController> logger, MyDbContext dbContext) : base()
         {
             this._logger = logger;
             this._configuration = configuration;
@@ -31,17 +31,18 @@ namespace nursery.Controllers.User
         }
 
         /// <summary>
-        /// Get the list of accounts from the DB
+        /// Get a list of the prospects for the user selected
         /// </summary>
-        [Route("/v1/users")]
+        /// <param name="idUser">Id of the user using the application</param>
+        [Route("/v1/prospects")]
         [HttpGet]
         // [Authorize]
-        public IActionResult GetUsers()
+        public IActionResult GetProspects(string idUser)
         {
-            var handler = new UserQueryHandler(_logger, _configuration, _dbContext);
-            List<UserDTO> users = handler.GetUsers();
+            var handler = new ProspectQueryHandler(_logger, _configuration, _dbContext);
+            List<ProspectDTO> prospects = handler.GetProspects();
 
-            return Ok(users);
+            return Ok(prospects);
         }
 
     }

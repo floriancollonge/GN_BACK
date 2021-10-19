@@ -1,10 +1,11 @@
+using System;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MySql.Data.EntityFrameworkCore.Extensions;
+// using MySql.Data.EntityFrameworkCore.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using nursery.context;
@@ -66,13 +67,14 @@ namespace nursery
         /// <param name="services">Element to which we add the contexts</param>
         private void AddContexts(IServiceCollection services)
         {
-            string connectionString = Configuration.GetConnectionString("ConnectionString");
-            services.AddDbContext<MyDbContext>(options =>
-                options.UseMySQL(
-                    connectionString,
-                    b => b.MigrationsAssembly("AspNetCoreMultipleProject")
-                )
-            );
+            string connectionString = Configuration.GetConnectionString("defaultConnection");
+            // services.AddDbContext<MyDbContext>(options =>
+            //     options.UseMySql(
+            //         connectionString,
+            //         b => b.MigrationsAssembly("AspNetCoreMultipleProject")
+            //     )
+            // );
+            services.AddDbContextPool<MyDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

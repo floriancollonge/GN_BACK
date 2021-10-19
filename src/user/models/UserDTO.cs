@@ -2,7 +2,7 @@ namespace nursery.prospect.models
 {
     public class UserDTO
     {
-        public int IdUser {get;set;}
+        public string IdUser {get;set;}
         
         public string FirstName {get;set;}
 

@@ -44,6 +44,16 @@ namespace nursery
                         .UseStartup<Startup>()
                         .UseUrls("http://localhost:5003");
                 })
+                .ConfigureAppConfiguration(configuration =>
+                {
+                    var currentEnv =
+                        $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json";
+
+                    configuration
+                        .SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json", false, true)
+                        .AddJsonFile(currentEnv, true);
+                })
                 .UseSerilog();
     }
 }
