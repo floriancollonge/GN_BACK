@@ -45,5 +45,41 @@ namespace nursery.Controllers.User
             return Ok(prospects);
         }
 
+        /// <summary>
+        /// Adding a prospect to the list in DB
+        /// </summary>
+        /// <param name="prospect">Prospect to add to the application</param>
+        [Route("/v1/prospect")]
+        [HttpPost]
+        // [Authorize]
+        public IActionResult AddProspect(ProspectDTO prospect)
+        {
+            validateInputs(prospect);
+            ProspectCommandHandler commandHandler = new ProspectCommandHandler(_logger, _configuration, _dbContext);
+            commandHandler.AddProspect(prospect);
+            return Created("/v1/prospect", prospect);
+        }
+
+        /// <summary>Validate the datas inside the DTO</summary>
+        /// <param name="prospect"*>The DTO to validate</param>
+        /// <returns>bool : true if everything is in order, false otherwise</returns>
+        private bool validateInputs(ProspectDTO prospect)
+        {
+            if (string.IsNullOrEmpty(prospect.FirstName))
+            {
+                return false;
+            }
+            if (string.IsNullOrEmpty(prospect.LastName))
+            {
+                return false;
+            }
+            if (string.IsNullOrEmpty(prospect.Mail))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

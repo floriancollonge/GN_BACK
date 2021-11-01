@@ -13,7 +13,7 @@ namespace nursery.prospect.models
         
         [Column("id_user")]
         [Required]
-        public int IdUser {get;set;}
+        public string IdUser {get;set;}
 
         [Column("first_name")]
         [Required]
@@ -22,6 +22,9 @@ namespace nursery.prospect.models
         [Column("last_name")]
         [Required]
         public string LastName {get;set;}
+
+        [Column("company_name")]
+        public string CompanyName {get;set;}
 
         [Column("mail")]
         public string Mail {get;set;}

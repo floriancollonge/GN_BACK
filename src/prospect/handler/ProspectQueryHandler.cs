@@ -34,6 +34,7 @@ namespace nursery.prospect
                     IdUser = prospectTable.IdUser,
                     FirstName = prospectTable.FirstName,
                     LastName = prospectTable.LastName,
+                    CompanyName = prospectTable.CompanyName,
                     DateInsert = prospectTable.DateInsert,
                     IdProspect = prospectTable.IdProspect,
                     IdStep = prospectTable.IdStep,

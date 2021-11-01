@@ -16,6 +16,7 @@ create table prospects (
     id_user integer not null references user(id_user),
     first_name varchar(50) not null,
     last_name varchar(50) not null,
+    company_name varchar(100),
     mail varchar(200),
     phone varchar(15),
     id_step integer not null references process_step(id_step),
